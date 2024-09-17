@@ -13,9 +13,12 @@ viii)	Write and Save the Modified Image
 
 ## Software Required:
 Anaconda - Python 3.7
+
 ## Algorithm:
+
 ### Step1:
 Load an image from your local directory and display it.
+
 ### Step2:
 o	Draw a line from the top-left to the bottom-right of the image.
 o	Draw a circle at the center of the image.
@@ -34,8 +37,10 @@ o	Modify the color of the pixel at (200, 200) to white.
 
 ### Step5:
 o	Resize the original image to half its size and display it.
+
 ### Step6:
 o	Crop a region of interest (ROI) from the image (e.g., a 100x100 pixel area starting at (50, 50)) and display it.
+
 ### Step7:
 o	Flip the original image horizontally and display it.
 o	Flip the original image vertically and display it.
@@ -43,12 +48,10 @@ o	Flip the original image vertically and display it.
 ### Step8:
 o	Save the final modified image to your local directory.
 
-
 ##### Program and Output:
 
 ### Developed By:priyadharshini E
 ### Register Number:212223230159 
-
 
 ### i)Read and Display an Image
 ```
@@ -63,12 +66,10 @@ cv2.imshow('kakashi',image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
+   ### output:
 
-### output:
-
-
-
-
+   
+![Screenshot 2024-09-15 233910](https://github.com/user-attachments/assets/7d915ff3-50ce-4adc-a9f7-43db7a6a4e6d)
 
 
 ### ii)Draw Shapes and Add Text
@@ -84,7 +85,13 @@ res_img=cv2.rectangle(img,start,stop,color,thickness)
 cv2.imshow('Image Window', res_img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+```
+### output :
 
+![Uploading Screenshot 2024-09-15 234302.png…]()
+
+
+```
 ii)draw a circle at the center of image
 import cv2
 
@@ -95,7 +102,14 @@ res=cv2.circle(img,(320,295),150,(255,0,0),10)
 cv2.imshow('Image Window', res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+```
 
+### output:
+
+![Uploading Screenshot 2024-09-15 234756.png…]()
+
+
+```
 iii) draw a line from the top-left to bottom-right of the image
 import cv2
 
@@ -105,7 +119,11 @@ res = cv2.line(img,(550,600),(0,0),(220,120,205),10)
 cv2.imshow('Image Window', res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+```
+### output :
 
+
+```
 iv)Add the text "OpenCV Drawing" at the top-left corner of the image
 
 import cv2
@@ -121,8 +139,12 @@ res = cv2.putText(image, text, position, font, font_scale, color, thickness, cv2
 cv2.imshow('WINDOW', res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-
 ```
+
+### output:
+
+<img width="301" alt="image 5 dip ex 1" src="https://github.com/user-attachments/assets/cf11c98a-a681-45db-9e70-689fd98188d1">
+
 
 ### iii)Image Color Conversion
 
@@ -143,6 +165,8 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 ## output :
+![Uploading img6 dip exe1.png…]()
+
 
 
 ### iv)Access and Manipulate Image Pixels
@@ -154,6 +178,8 @@ pixel_value = img[100, 100]
 print(f"Pixel value at (100, 100): {pixel_value}")
 ```
 ## output:
+
+<img width="442" alt="img 7 dip exe1" src="https://github.com/user-attachments/assets/f3d225c4-b5cd-45b6-9894-bba04fea0466">
 
 
 (ii) Modify the color of the pixel at (200, 200) to white
@@ -183,6 +209,7 @@ cv2.destroyAllWindows()
 
 ## output
 
+<img width="473" alt="img9 dip exe1" src="https://github.com/user-attachments/assets/1e01a94c-bbf9-42e5-af2b-762652565d68">
 
 
 ### vi)Image Cropping
@@ -201,6 +228,7 @@ cv2.destroyAllWindows()
 
 ### output
 
+<img width="91" alt="img 10 dip" src="https://github.com/user-attachments/assets/f3b0b572-407d-4892-b443-b7165d3c6435">
 
 
 ### vii)Image Flipping
@@ -219,6 +247,7 @@ cv2.destroyAllWindows()
 
 ## output
 
+<img width="460" alt="img 11 dip" src="https://github.com/user-attachments/assets/27196546-bc4b-4d22-a6bf-3053c4660c76">
 
 
 ii)Flip the original image vertically and display it.
@@ -234,6 +263,7 @@ cv2.destroyAllWindows()
 ```
 ## output
 
+![Screenshot 2024-09-16 001342](https://github.com/user-attachments/assets/5a579f03-11ca-4403-9434-8b3d90439942)
 
 
 
@@ -247,6 +277,7 @@ cv2.imwrite('boat_pic.jpg',img)
 ```
 ### output:
 
+<img width="425" alt="dip last img exe 1" src="https://github.com/user-attachments/assets/ec9fc8e3-ae73-4134-b3d7-8ba9f0b27abc">
 
 
 
