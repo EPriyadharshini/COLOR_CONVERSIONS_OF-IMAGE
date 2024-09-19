@@ -90,7 +90,8 @@ cv2.destroyAllWindows()
 
 
 
-![Uploading Screenshot 2024-09-15 234302.png…]()
+![image](https://github.com/user-attachments/assets/4df8f5db-1619-4074-a204-b198e9db0407)
+
 
 
 
@@ -109,8 +110,8 @@ cv2.destroyAllWindows()
 
 ### output:
 
+![image](https://github.com/user-attachments/assets/58c04449-cafb-4b1f-817d-1003e2068cae)
 
-![Uploading Screenshot 2024-09-15 234756.png…]()
 
 
 
@@ -176,9 +177,7 @@ cv2.destroyAllWindows()
 ## output :
 
 
-![Uploading img6 dip exe1.png…]()
-
-
+![image](https://github.com/user-attachments/assets/939876a2-891c-405a-a1b1-cf75b8464576)
 
 ### iv)Access and Manipulate Image Pixels
 
