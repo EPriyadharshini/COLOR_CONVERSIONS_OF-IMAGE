@@ -88,7 +88,10 @@ cv2.destroyAllWindows()
 ```
 ### output :
 
+
+
 ![Uploading Screenshot 2024-09-15 234302.png…]()
+
 
 
 ```
@@ -106,7 +109,9 @@ cv2.destroyAllWindows()
 
 ### output:
 
+
 ![Uploading Screenshot 2024-09-15 234756.png…]()
+
 
 
 ```
@@ -120,7 +125,11 @@ cv2.imshow('Image Window', res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
+
 ### output :
+
+
+![image](https://github.com/user-attachments/assets/9b87a7cd-93d5-4cde-99c6-7c8f961423e5)
 
 
 ```
@@ -165,6 +174,8 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 ## output :
+
+
 ![Uploading img6 dip exe1.png…]()
 
 
@@ -195,6 +206,7 @@ cv2.destroyAllWindows()
 ```
 ## output
 
+![image](https://github.com/user-attachments/assets/2f94c1d7-c59e-4a1e-92c3-7a2def6b8cd3)
 
 
 ### v)Image Resizing
