@@ -59,12 +59,13 @@ o	Save the final modified image to your local directory.
 pip install opencv-contrib-python
 import cv2
 import matplotlib.pyplot as plt
-import cv2
-image=cv2.imread('img1.jpg',1)
-image=cv2.resize(image,(400,300))
-cv2.imshow('kakashi',image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+# Convert BGR (OpenCV's default) to RGB (Matplotlib's expected color order)
+img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+# Display the image using Matplotlib
+plt.imshow(img_rgb, cmap='viridis')  # You can change 'viridis' to another cmap or use None for RGB images
+plt.title("Original Image")
+plt.axis('off')  # Removes axis ticks and labels
+plt.show()
 ```
    ### output:
 
@@ -73,111 +74,168 @@ cv2.destroyAllWindows()
 
 
 ### ii)Draw Shapes and Add Text
+Step2:
+o Draw a line from the top-left to the bottom-right of the image.
+
+o Draw a circle at the center of the image. 
+
+o Draw a rectangle around a specific region of interest in the image. 
+
+o Add the text "OpenCV Drawing" at the top-left corner of the image.
 ```
-i) draw a square from the left corner of the image
-import cv2
-img = cv2.imread("img1.jpg")
-start=(0,0)
-stop=(409,529)
-color=(100,255,100)
-thickness=10
-res_img=cv2.rectangle(img,start,stop,color,thickness)
-cv2.imshow('Image Window', res_img)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+
+
+
+i) draw a square 
+# Load the image
+image = cv2.imread('img.jpeg') 
+
+# Convert BGR (OpenCV's default) to RGB (Matplotlib's expected color order)
+img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+img.shape
+# Draw a rectangle around the Whole image
+rectangle_img = cv2.rectangle(img_rgb, (0, 0), (770, 490), (0, 0, 255), 10)  # cv2.rectangle(image, start_point, end_point, color, thickness)
+plt.imshow(rectangle_img, cmap='viridis')  
+plt.title("Image with Rectangle")
+plt.axis('off')  
+plt.show()
+
 ```
 ### output :
 
 
 
-![image](https://github.com/user-attachments/assets/4df8f5db-1619-4074-a204-b198e9db0407)
-
+![image](https://github.com/user-attachments/assets/f9482dac-6e0a-4d3a-9f9b-a5d193795ab0)
 
 
 
 ```
 ii)draw a circle at the center of image
-import cv2
+# Load the image
+image = cv2.imread('img.jpeg') 
 
-img = cv2.imread("img1.jpg")
-
-res=cv2.circle(img,(320,295),150,(255,0,0),10)
-
-cv2.imshow('Image Window', res)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+# Convert BGR (OpenCV's default) to RGB (Matplotlib's expected color order)
+img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+img_rgb.shape
+circle_img = cv2.circle(img_rgb,(400,250),150,(25,0,0),10) # cv2.circle(image, center, radius, color, thickness)
+plt.imshow(circle_img, cmap='viridis')  
+plt.title("Image with Circle")
+plt.axis('off')  
+plt.show()
 ```
 
 ### output:
-
-![image](https://github.com/user-attachments/assets/58c04449-cafb-4b1f-817d-1003e2068cae)
-
+![image](https://github.com/user-attachments/assets/ea4d0195-3742-45b6-bc42-e3da588f9331)
 
 
+
+
+
+
+
+iii) draw a line from the top-left to bottom-right of the image
 
 ```
-iii) draw a line from the top-left to bottom-right of the image
-import cv2
-
-img = cv2.imread("img1.jpg")
-res = cv2.line(img,(550,600),(0,0),(220,120,205),10)
-
-cv2.imshow('Image Window', res)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+# Load the image
+image = cv2.imread('img.jpeg') # Convert BGR (OpenCV's default) to RGB (Matplotlib's expected color order)
+img_rgb.shape
+# Draw a line from top-left to bottom-right
+line_img = cv2.line(img_rgb, (0, 0), (790, 500), (25, 0, 0), 2) # cv2.line(image, start_point, end_point, color, thickness)
+plt.imshow(line_img, cmap='viridis')  
+plt.title("Image with Line")
+plt.axis('off')  
+plt.show()
 ```
 
 ### output :
 
+![image](https://github.com/user-attachments/assets/cdbd3950-1b09-4273-96c3-2321b447e6a8)
 
-![image](https://github.com/user-attachments/assets/9b87a7cd-93d5-4cde-99c6-7c8f961423e5)
 
 
 ```
 iv)Add the text "OpenCV Drawing" at the top-left corner of the image
 
-import cv2
-image = cv2.imread("img1.jpg")
-image = cv2.resize(image, (400, 300))
-text = "kakashi"
-position = (10, 50)
-font = cv2.FONT_HERSHEY_SIMPLEX
-font_scale = 1
-color = (255, 255, 255) 
-thickness = 2
-res = cv2.putText(image, text, position, font, font_scale, color, thickness, cv2.LINE_AA)
-cv2.imshow('WINDOW', res)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+# Load the image
+image = cv2.imread('img.jpeg') 
+
+# Convert BGR (OpenCV's default) to RGB (Matplotlib's expected color order)
+img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+# Add text to the image
+text_img = cv2.putText(img_rgb, "OpenCV Drawing", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 40), 10)  ## cv2.putText(image, text, position, font, font_scale, color, thickness)
+plt.imshow(text_img, cmap='viridis')  
+plt.title("Image with Text")
+plt.axis('off')  
+plt.show()
 ```
 
 ### output:
 
-<img width="301" alt="image 5 dip ex 1" src="https://github.com/user-attachments/assets/cf11c98a-a681-45db-9e70-689fd98188d1">
+![image](https://github.com/user-attachments/assets/a5f2104a-c0cb-4778-adeb-cc6ee16a7302)
 
 
 ### iii)Image Color Conversion
 
+
+Step3:
+o Convert the image from RGB to HSV and display it.
+    
+o Convert the image from RGB to GRAY and display it. 
+
+o Convert the image from RGB to YCrCb and display it. 
+    
+o Convert the HSV image back to RGB and display it.
+
 ```
-import cv2
-img = cv2.imread('img1.jpg',1)
-img = cv2.resize(img,(300,200))
-cv2.imshow('Original Image',img)
-hsv2 = cv2.cvtColor(img,cv2.COLOR_RGB2HSV)
-cv2.imshow('RGB2HSV',hsv2)
-gray2 = cv2.cvtColor(img,cv2.COLOR_RGB2GRAY)
-cv2.imshow('RGB2GRAY',gray2)
-YCrCB2 = cv2.cvtColor(img,cv2.COLOR_RGB2YCrCb)
-cv2.imshow('RGB2YCrCB',YCrCB2)
-rgb = cv2.cvtColor(img,cv2.COLOR_HSV2RGB)
-cv2.imshow('RGB2YCrCB',rgb)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+# Load the image
+image = cv2.imread('img.jpeg')
+image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+# Original RGB Image
+plt.imshow(image_rgb)
+plt.title("RGB - ORG ")
+plt.axis("off")
 ```
 ## output :
 
+![image](https://github.com/user-attachments/assets/dd145814-e58f-418b-b306-7f9d7ee46c0d)
 
-![image](https://github.com/user-attachments/assets/939876a2-891c-405a-a1b1-cf75b8464576)
+```
+# Convert RGB to HSV
+image_hsv = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2HSV)
+# HSV Image
+plt.imshow(image_hsv)
+plt.title("HSV Image")
+plt.axis("off")
+```
+# output
+
+![image](https://github.com/user-attachments/assets/dd6d2288-2932-41ef-84ff-a571d9a348c0)
+
+# Convert RGB to GRAY
+image_gray = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2GRAY)
+
+# Grayscale Image
+plt.imshow(image_gray, cmap='gray')
+plt.title("Grayscale Image")
+plt.axis("off")
+
+
+# output
+
+![image](https://github.com/user-attachments/assets/357b697c-6455-4d3c-8da1-64d89354ee58)
+
+```
+# Convert RGB to YCrCb
+image_ycrcb = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2YCrCb)
+
+# YCrCb Image
+plt.imshow(image_ycrcb)
+plt.title("YCrCb Image")
+plt.axis("off")
+```
+# output 
+  ![image](https://github.com/user-attachments/assets/361181c5-0fa7-43fb-9a66-6f8be18ed608)
+
 
 ### iv)Access and Manipulate Image Pixels
 
@@ -190,6 +248,18 @@ print(f"Pixel value at (100, 100): {pixel_value}")
 ## output:
 
 <img width="442" alt="img 7 dip exe1" src="https://github.com/user-attachments/assets/f3d225c4-b5cd-45b6-9894-bba04fea0466">
+
+```
+# Convert HSV back to RGB
+image_hsv_to_rgb = cv2.cvtColor(image_hsv, cv2.COLOR_HSV2RGB)
+plt.imshow(image_hsv_to_rgb)
+plt.title("HSV to RGB Image")
+plt.axis("off")
+```
+# output
+
+ 
+
 
 
 (ii) Modify the color of the pixel at (200, 200) to white
@@ -207,6 +277,28 @@ cv2.destroyAllWindows()
 
 ![image](https://github.com/user-attachments/assets/2f94c1d7-c59e-4a1e-92c3-7a2def6b8cd3)
 
+Step4:
+o Access and print the value of the pixel at coordinates (100, 100). 
+
+o Modify the color of the pixel at (200, 200) to white.
+
+```
+# Modify a block of pixels (300x300) to white, starting from (200, 200)
+image[100:350, 300:500] = [255, 255, 255]  # Rows: 200-499, Columns: 200-499
+# Convert BGR to RGB for displaying with Matplotlib
+image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+# Display the modified image
+plt.imshow(image_rgb)
+plt.title("Image with 300x300 White Block")
+plt.axis("off")
+plt.show()
+
+```
+
+# output
+
+
 
 ### v)Image Resizing
 
@@ -222,73 +314,89 @@ cv2.destroyAllWindows()
 
 <img width="473" alt="img9 dip exe1" src="https://github.com/user-attachments/assets/1e01a94c-bbf9-42e5-af2b-762652565d68">
 
+Step5:
+o Resize the original image to half its size and display it.
 
-### vi)Image Cropping
 
 ```
-import cv2
-image = cv2.imread('img1.jpg',1)
-image = cv2.resize(image,(400,300))
-x, y = 50, 50
-width, height = 100, 100
-roi = image[y:y + height, x:x + width]
-cv2.imshow('CROPPED IMAGE', roi)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+
+# Load the image
+image = cv2.imread('img.jpeg')
+image.shape
+# Resize the image to half its size
+resized_image = cv2.resize(image, (768 // 2, 600 // 2))  # (new_width, new_height)
+# Convert BGR to RGB for displaying with Matplotlib
+resized_image_rgb = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+resized_image_rgb.shape
+# Display the resized image
+plt.imshow(resized_image_rgb)
+plt.title("Resized Image (Half Size)")
+plt.axis("off")
+plt.show()
+```
+ # output
+ 
+![image](https://github.com/user-attachments/assets/6cbf7f41-03e1-4a20-9c51-6173ffc27e61)
+
+Step6:
+o Crop a region of interest (ROI) from the image (e.g., a 100x100 pixel area starting at (50, 50)) and display it.
+```
+# Load the image
+image = cv2.imread('img.jpeg') 
+image.shape
+# Crop a 300x300 region starting from (50, 50)
+roi = image[100:350, 250:550]  # Rows: 50-349, Columns: 50-349
+
+# Convert BGR to RGB for displaying with Matplotlib
+roi_rgb = cv2.cvtColor(roi, cv2.COLOR_BGR2RGB)
+
+# Display the cropped region (ROI)
+plt.imshow(roi_rgb)
+plt.title("Cropped Region of Interest (ROI)")
+plt.axis("off")
+plt.show()
+
+
 ```
 
-### output
 
-<img width="91" alt="img 10 dip" src="https://github.com/user-attachments/assets/f3b0b572-407d-4892-b443-b7165d3c6435">
+# output
 
-
-### vii)Image Flipping
-
-i)Flip the original image horizontally and display it.
-```
-import cv2
-image = cv2.imread("img1.jpg")
-image = cv2.resize(image,(300,200))
-res=cv2.rotate(image,cv2.ROTATE_180)
-cv2.imshow('ORIGINAL IMAGE',image)
-cv2.imshow('FLIPPED IMAGE', res)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-```
-
-## output
-
-<img width="460" alt="img 11 dip" src="https://github.com/user-attachments/assets/27196546-bc4b-4d22-a6bf-3053c4660c76">
+![image](https://github.com/user-attachments/assets/8997bc41-b101-4a09-8589-6cf1cfd44dcb)
 
 
-ii)Flip the original image vertically and display it.
-```
-import cv2
-image = cv2.imread("img1.jpg")
-image = cv2.resize(image,(300,200))
-res=cv2.rotate(image,cv2.ROTATE_90_CLOCKWISE)
-cv2.imshow('ORIGINAL IMAGE',image)
-cv2.imshow('FLIPPED IMAGE', res)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-```
-## output
+Step7:
+o Flip the original image horizontally and display it. 
 
-![Screenshot 2024-09-16 001342](https://github.com/user-attachments/assets/5a579f03-11ca-4403-9434-8b3d90439942)
-
-
-
-### viii)Write and Save the Modified Image
-```
-import cv2
-img = cv2.imread("img1.jpg")
-img = cv2.resize(img,(300,200))
-cv2.imwrite('boat_pic.jpg',img)
+o Flip the original image vertically and display it.
 
 ```
-### output:
+# Load the image
+image = cv2.imread('img.jpeg') 
+# Flip the image horizontally (left-right)
+flipped_horizontally = cv2.flip(image, 1)
+# Convert BGR to RGB for displaying with Matplotlib
+flipped_horizontally_rgb = cv2.cvtColor(flipped_horizontally, cv2.COLOR_BGR2RGB)
+# Horizontal flip
+plt.imshow(flipped_horizontally_rgb)
+plt.title("Flipped Horizontally")
+plt.axis("off")
+```
 
-<img width="425" alt="dip last img exe 1" src="https://github.com/user-attachments/assets/ec9fc8e3-ae73-4134-b3d7-8ba9f0b27abc">
+# output
+    ![image](https://github.com/user-attachments/assets/885a98cc-0588-4977-a055-0553d9e40cfe)
+
+# Flip the image vertically (up-down)
+flipped_vertically = cv2.flip(image, 0)
+# Convert BGR to RGB for displaying with Matplotlib
+flipped_vertically_rgb = cv2.cvtColor(flipped_vertically, cv2.COLOR_BGR2RGB)
+# Vertical flip
+plt.imshow(flipped_vertically_rgb)
+plt.title("Flipped Vertically")
+plt.axis("off")
+# output
+
+![image](https://github.com/user-attachments/assets/2459693a-3fdd-41bd-98fb-636bc21c90b8)
 
 
 
