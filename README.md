@@ -68,9 +68,9 @@ plt.axis('off')  # Removes axis ticks and labels
 plt.show()
 ```
    ### output:
+![image](https://github.com/user-attachments/assets/c368a995-70f3-4635-a669-b6727630cc55)
 
    
-![Screenshot 2024-09-15 233910](https://github.com/user-attachments/assets/7d915ff3-50ce-4adc-a9f7-43db7a6a4e6d)
 
 
 ### ii)Draw Shapes and Add Text
@@ -237,17 +237,6 @@ plt.axis("off")
   ![image](https://github.com/user-attachments/assets/361181c5-0fa7-43fb-9a66-6f8be18ed608)
 
 
-### iv)Access and Manipulate Image Pixels
-
-(i) Access and print the value of the pixel at coordinates (100, 100)
-
-```
-pixel_value = img[100, 100]
-print(f"Pixel value at (100, 100): {pixel_value}")
-```
-## output:
-
-<img width="442" alt="img 7 dip exe1" src="https://github.com/user-attachments/assets/f3d225c4-b5cd-45b6-9894-bba04fea0466">
 
 ```
 # Convert HSV back to RGB
@@ -259,23 +248,9 @@ plt.axis("off")
 # output
 
  
+![image](https://github.com/user-attachments/assets/86be7a28-d3e9-4379-b722-eb9c513156dc)
 
 
-
-(ii) Modify the color of the pixel at (200, 200) to white
-```
-import cv2
-image = cv2.imread('img1.jpg',1)
-image = cv2.resize(image,(400,300))
-cv2.imshow('ORIGINAL IMAGE',image)
-image[200, 200] = [255, 255, 255] 
-cv2.imshow('MODIFIED IMAGE', image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-```
-## output
-
-![image](https://github.com/user-attachments/assets/2f94c1d7-c59e-4a1e-92c3-7a2def6b8cd3)
 
 Step4:
 o Access and print the value of the pixel at coordinates (100, 100). 
@@ -298,21 +273,8 @@ plt.show()
 
 # output
 
+![image](https://github.com/user-attachments/assets/239cd20d-6319-4abf-a299-d65facd2c707)
 
-
-### v)Image Resizing
-
-```
-cv2.imshow('ORIGINAL IMAGE',image)
-resized_image = cv2.resize(image, (image.shape[1] // 2, image.shape[0] // 2))
-cv2.imshow('RESIZED IMAGE', resized_image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-```
-
-## output
-
-<img width="473" alt="img9 dip exe1" src="https://github.com/user-attachments/assets/1e01a94c-bbf9-42e5-af2b-762652565d68">
 
 Step5:
 o Resize the original image to half its size and display it.
@@ -369,8 +331,8 @@ Step7:
 o Flip the original image horizontally and display it. 
 
 o Flip the original image vertically and display it.
-
 ```
+
 # Load the image
 image = cv2.imread('img.jpeg') 
 # Flip the image horizontally (left-right)
@@ -381,10 +343,6 @@ flipped_horizontally_rgb = cv2.cvtColor(flipped_horizontally, cv2.COLOR_BGR2RGB)
 plt.imshow(flipped_horizontally_rgb)
 plt.title("Flipped Horizontally")
 plt.axis("off")
-```
-
-# output
-    ![image](https://github.com/user-attachments/assets/885a98cc-0588-4977-a055-0553d9e40cfe)
 
 # Flip the image vertically (up-down)
 flipped_vertically = cv2.flip(image, 0)
@@ -394,10 +352,14 @@ flipped_vertically_rgb = cv2.cvtColor(flipped_vertically, cv2.COLOR_BGR2RGB)
 plt.imshow(flipped_vertically_rgb)
 plt.title("Flipped Vertically")
 plt.axis("off")
+```
 # output
 
 ![image](https://github.com/user-attachments/assets/2459693a-3fdd-41bd-98fb-636bc21c90b8)
 
+# output
+
+![image](https://github.com/user-attachments/assets/8ea2993f-1871-4b82-b4b4-1fa07becc9fc)
 
 
 
